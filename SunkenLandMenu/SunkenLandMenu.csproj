@@ -30,7 +30,44 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Stats.cs" />
     <Compile Include="Hack.cs" />
     <Compile Include="Loader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -435,6 +472,141 @@
     <Reference Include="websocket-sharp">
       <HintPath>D:\unityH\SunkenLand\websocket-sharp.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="References\Assembly-CSharp-firstpass.dll" />
+    <Content Include="References\Assembly-CSharp.dll" />
+    <Content Include="References\Autodesk.Fbx.dll" />
+    <Content Include="References\ClassLibrary1.dll" />
+    <Content Include="References\com.rlabrecque.steamworks.net.dll" />
+    <Content Include="References\Crest.dll" />
+    <Content Include="References\Crest.Examples.dll" />
+    <Content Include="References\DOTween.dll" />
+    <Content Include="References\FbxBuildTestAssets.dll" />
+    <Content Include="References\Fusion.Addressables.dll" />
+    <Content Include="References\Fusion.Common.dll" />
+    <Content Include="References\Fusion.Realtime.dll" />
+    <Content Include="References\Fusion.Runtime.dll" />
+    <Content Include="References\Fusion.Sockets.dll" />
+    <Content Include="References\Mono.Security.dll" />
+    <Content Include="References\NanoSockets.dll" />
+    <Content Include="References\NavMeshComponents.dll" />
+    <Content Include="References\NavMeshComponentsExamples.dll" />
+    <Content Include="References\netstandard.dll" />
+    <Content Include="References\Newtonsoft.Json.dll" />
+    <Content Include="References\NWH.Common.dll" />
+    <Content Include="References\NWH.DWP2.dll" />
+    <Content Include="References\P2T.dll" />
+    <Content Include="References\Photon3Unity3D.dll" />
+    <Content Include="References\PhotonChat.dll" />
+    <Content Include="References\PhotonRealtime.dll" />
+    <Content Include="References\PhotonVoice.API.dll" />
+    <Content Include="References\PhotonVoice.dll" />
+    <Content Include="References\PhotonVoice.Fusion.dll" />
+    <Content Include="References\UniTask.Addressables.dll" />
+    <Content Include="References\UniTask.dll" />
+    <Content Include="References\UniTask.DOTween.dll" />
+    <Content Include="References\UniTask.Linq.dll" />
+    <Content Include="References\UniTask.TextMeshPro.dll" />
+    <Content Include="References\Unity.Addressables.dll" />
+    <Content Include="References\Unity.Analytics.DataPrivacy.dll" />
+    <Content Include="References\Unity.Burst.Cecil.dll" />
+    <Content Include="References\Unity.Burst.Cecil.Mdb.dll" />
+    <Content Include="References\Unity.Burst.Cecil.Pdb.dll" />
+    <Content Include="References\Unity.Burst.Cecil.Rocks.dll" />
+    <Content Include="References\Unity.Burst.dll" />
+    <Content Include="References\Unity.Burst.Unsafe.dll" />
+    <Content Include="References\Unity.Formats.Fbx.Runtime.dll" />
+    <Content Include="References\Unity.InputSystem.dll" />
+    <Content Include="References\Unity.InternalAPIEngineBridge.013.dll" />
+    <Content Include="References\Unity.Localization.dll" />
+    <Content Include="References\Unity.Mathematics.dll" />
+    <Content Include="References\Unity.Postprocessing.Runtime.dll" />
+    <Content Include="References\Unity.ResourceManager.dll" />
+    <Content Include="References\Unity.ScriptableBuildPipeline.dll" />
+    <Content Include="References\Unity.TextMeshPro.dll" />
+    <Content Include="References\Unity.Timeline.dll" />
+    <Content Include="References\UnityEngine.AccessibilityModule.dll" />
+    <Content Include="References\UnityEngine.Advertisements.dll" />
+    <Content Include="References\UnityEngine.AIModule.dll" />
+    <Content Include="References\UnityEngine.AndroidJNIModule.dll" />
+    <Content Include="References\UnityEngine.AnimationModule.dll" />
+    <Content Include="References\UnityEngine.ARModule.dll" />
+    <Content Include="References\UnityEngine.AssetBundleModule.dll" />
+    <Content Include="References\UnityEngine.AudioModule.dll" />
+    <Content Include="References\UnityEngine.ClothModule.dll" />
+    <Content Include="References\UnityEngine.ClusterInputModule.dll" />
+    <Content Include="References\UnityEngine.ClusterRendererModule.dll" />
+    <Content Include="References\UnityEngine.CoreModule.dll" />
+    <Content Include="References\UnityEngine.CrashReportingModule.dll" />
+    <Content Include="References\UnityEngine.DirectorModule.dll" />
+    <Content Include="References\UnityEngine.dll" />
+    <Content Include="References\UnityEngine.DSPGraphModule.dll" />
+    <Content Include="References\UnityEngine.GameCenterModule.dll" />
+    <Content Include="References\UnityEngine.GIModule.dll" />
+    <Content Include="References\UnityEngine.GridModule.dll" />
+    <Content Include="References\UnityEngine.HotReloadModule.dll" />
+    <Content Include="References\UnityEngine.ImageConversionModule.dll" />
+    <Content Include="References\UnityEngine.IMGUIModule.dll" />
+    <Content Include="References\UnityEngine.InputLegacyModule.dll" />
+    <Content Include="References\UnityEngine.InputModule.dll" />
+    <Content Include="References\UnityEngine.JSONSerializeModule.dll" />
+    <Content Include="References\UnityEngine.LocalizationModule.dll" />
+    <Content Include="References\UnityEngine.Monetization.dll" />
+    <Content Include="References\UnityEngine.NVIDIAModule.dll" />
+    <Content Include="References\UnityEngine.ParticleSystemModule.dll" />
+    <Content Include="References\UnityEngine.PerformanceReportingModule.dll" />
+    <Content Include="References\UnityEngine.Physics2DModule.dll" />
+    <Content Include="References\UnityEngine.PhysicsModule.dll" />
+    <Content Include="References\UnityEngine.ProfilerModule.dll" />
+    <Content Include="References\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" />
+    <Content Include="References\UnityEngine.ScreenCaptureModule.dll" />
+    <Content Include="References\UnityEngine.SharedInternalsModule.dll" />
+    <Content Include="References\UnityEngine.SpatialTracking.dll" />
+    <Content Include="References\UnityEngine.SpriteMaskModule.dll" />
+    <Content Include="References\UnityEngine.SpriteShapeModule.dll" />
+    <Content Include="References\UnityEngine.StreamingModule.dll" />
+    <Content Include="References\UnityEngine.SubstanceModule.dll" />
+    <Content Include="References\UnityEngine.SubsystemsModule.dll" />
+    <Content Include="References\UnityEngine.TerrainModule.dll" />
+    <Content Include="References\UnityEngine.TerrainPhysicsModule.dll" />
+    <Content Include="References\UnityEngine.TextCoreFontEngineModule.dll" />
+    <Content Include="References\UnityEngine.TextCoreTextEngineModule.dll" />
+    <Content Include="References\UnityEngine.TextRenderingModule.dll" />
+    <Content Include="References\UnityEngine.TilemapModule.dll" />
+    <Content Include="References\UnityEngine.TLSModule.dll" />
+    <Content Include="References\UnityEngine.UI.dll" />
+    <Content Include="References\UnityEngine.UIElementsModule.dll" />
+    <Content Include="References\UnityEngine.UIElementsNativeModule.dll" />
+    <Content Include="References\UnityEngine.UIModule.dll" />
+    <Content Include="References\UnityEngine.UmbraModule.dll" />
+    <Content Include="References\UnityEngine.UNETModule.dll" />
+    <Content Include="References\UnityEngine.UnityAnalyticsModule.dll" />
+    <Content Include="References\UnityEngine.UnityConnectModule.dll" />
+    <Content Include="References\UnityEngine.UnityCurlModule.dll" />
+    <Content Include="References\UnityEngine.UnityTestProtocolModule.dll" />
+    <Content Include="References\UnityEngine.UnityWebRequestAssetBundleModule.dll" />
+    <Content Include="References\UnityEngine.UnityWebRequestAudioModule.dll" />
+    <Content Include="References\UnityEngine.UnityWebRequestModule.dll" />
+    <Content Include="References\UnityEngine.UnityWebRequestTextureModule.dll" />
+    <Content Include="References\UnityEngine.UnityWebRequestWWWModule.dll" />
+    <Content Include="References\UnityEngine.VehiclesModule.dll" />
+    <Content Include="References\UnityEngine.VFXModule.dll" />
+    <Content Include="References\UnityEngine.VideoModule.dll" />
+    <Content Include="References\UnityEngine.VirtualTexturingModule.dll" />
+    <Content Include="References\UnityEngine.VRModule.dll" />
+    <Content Include="References\UnityEngine.WindModule.dll" />
+    <Content Include="References\UnityEngine.XR.LegacyInputHelpers.dll" />
+    <Content Include="References\UnityEngine.XRModule.dll" />
+    <Content Include="References\VisualDesignCafe.Memory.dll" />
+    <Content Include="References\VisualDesignCafe.Nature.dll" />
+    <Content Include="References\VisualDesignCafe.Packages.dll" />
+    <Content Include="References\VisualDesignCafe.Pooling.dll" />
+    <Content Include="References\VisualDesignCafe.Rendering.dll" />
+    <Content Include="References\VisualDesignCafe.Rendering.Nature.dll" />
+    <Content Include="References\VisualDesignCafe.ShaderX.dll" />
+    <Content Include="References\VisualDesignCafe.Threading.dll" />
+    <Content Include="References\websocket-sharp.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

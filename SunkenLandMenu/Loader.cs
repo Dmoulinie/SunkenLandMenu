@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+
 namespace SunkenLandMenu
 {
     class Loader
@@ -11,6 +12,16 @@ namespace SunkenLandMenu
             UnityEngine.Object.DontDestroyOnLoad(Loader.Load);
         }
 
+        public static void Unload()
+        {
+            _Unload();
+        }
+
+        private static void _Unload()
+        {
+            GameObject.Destroy(Load);
+        }
         private static GameObject Load;
+
     }
 }
