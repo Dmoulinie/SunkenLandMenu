@@ -5,27 +5,44 @@ namespace SunkenLandMenu
 
     public class Stats : MonoBehaviour
     {
-        public static void InfiniteStamina(PlayerCharacter character)
+        public static void InfiniteStamina()
         {
-            character.Stamina = 100f;
-            character.MaxEnergy = 100f;
+            Global.code.Player.Stamina = 100f;
+            Global.code.Player.Energy = 100f;
         }
 
-        public static void InfiniteHealth(PlayerCharacter character)
+        public static void InfiniteHealth()
         {
-            character.Health = 1000f;
+            Global.code.Player.Health = 1000000f;
+            Global.code.Player.MaxHealth = 1000000f;
         }
 
-        public static void InfiniteFoodAndWater(PlayerCharacter character)
+        public static void InfiniteFoodAndWater()
         {
-            character.Hunger = 100f;
-            character.Thirst = 100f;
+            Global.code.Player.Hunger = 100f;
+            Global.code.Player.Thirst = 100f;
         }
 
-        public static void InfiniteAir(PlayerCharacter character)
+        public static void InfiniteAir()
         {
-            character.Air = character.MaxAir;
+            Global.code.Player.Air = 1000000f;
+            Global.code.Player.MaxAir = 1000000f;
         }
 
+        public static void GodMode()
+        {
+            Global.code.Player.Health = 1000000f;
+            Global.code.Player.MaxHealth = 1000000f;
+            Global.code.Player.Energy = 100f;
+            Global.code.Player.Stamina = 100f;
+            Global.code.Player.Hunger = 100f;
+            Global.code.Player.Thirst = 100f;
+            Global.code.Player.Bleeding = 0f;
+        }
+
+        public static void PerfectBodyTemperature()
+        {
+            Global.code.Player.BodyTemperature = 100f;
+        }
     }
 }
