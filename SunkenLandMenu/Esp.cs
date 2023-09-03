@@ -16,7 +16,7 @@ namespace SunkenLandMenu
         }
 
 
-        public static void DrawESP(Character character)
+        public static void DrawESP(Character character, bool lines = false)
         {
             Vector3 lastPosition = Vector3.zero;
 
@@ -28,12 +28,12 @@ namespace SunkenLandMenu
 
             Vector3 playerFootPos;
             playerFootPos.x = pivotPos.x;
-            playerFootPos.y = pivotPos.y - 2f;
+            playerFootPos.y = pivotPos.y;
             playerFootPos.z = pivotPos.z;
 
             Vector3 playerHeadPos;
             playerHeadPos.x = pivotPos.x;
-            playerHeadPos.y = pivotPos.y + 2f;
+            playerHeadPos.y = pivotPos.y + 1.8f;
             playerHeadPos.z = pivotPos.z;
             
             //World to screen
@@ -44,18 +44,20 @@ namespace SunkenLandMenu
             float widthOffset = 2f;
             float width = height / widthOffset;
 
-            if (w2s_footPos.z > 5f )
+            if (w2s_footPos.z > 2f )
             {
                 Render.DrawBox(w2s_footPos.x - (width / 2), (float)Screen.height - w2s_footPos.y - height, width, height, Color.red, 2f);
+                Vector2 centerScreen = new Vector2((float)Screen.width / 2, (float)Screen.height / 2);
+                if (lines)
+                {
+                    Render.DrawLine(centerScreen, w2s_headPos,Color.red,1f) ;
+                }
                 lastPosition = pivotPos;
 
             }
-
-
-
-
-
-
         }
+
+
+
     }
 }
