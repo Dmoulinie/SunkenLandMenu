@@ -14,13 +14,20 @@ namespace SunkenLandMenu
         public bool perfectBodyTemp = false;
 
         public bool menu = false;
+
+        // References to tabs
         PlayerCharacter character = FindObjectOfType<PlayerCharacter>();
         UIGameMenu cheats = new UIGameMenu();
-
+        Teleport teleporter = new Teleport();
 
         // ESP toggles
 
         bool espMain = false;
+        bool lines = false;
+
+
+        // Teleport
+        Vector3 savedCoordinates = Vector3.zero;
 
 
 
@@ -29,7 +36,7 @@ namespace SunkenLandMenu
             if (menu)
             {
                 GUI.BeginGroup(new Rect(200f, 200f, 400, 600));
-                GUI.Box(new Rect(0, 0, 400, 600), "Sunkenland Menu Alpha 0.12");
+                GUI.Box(new Rect(0, 0, 400, 600), "Sunkenland Menu Alpha 0.121");
 
                 if(GUI.Button(new Rect(50f, 40f, 200f, 30f),"Infinite Stamina : " + infiniteStamina.ToString()))
                 {
@@ -77,6 +84,20 @@ namespace SunkenLandMenu
                     cheats.MillionDamage();
                 }
 
+                if (GUI.Button(new Rect(50f, 400f, 200f, 30f), "Save"))
+                {
+                    Debug.Log(Global.code.Player.transform.position.ToString());
+                    savedCoordinates = FPSPlayer.code.transform.position;
+                }
+
+                if (GUI.Button(new Rect(50f, 440f, 200f, 30f), "Teleport"))
+                {
+                    Debug.Log(Global.code.Player.transform.position.ToString());
+                    FPSPlayer.code.transform.position = savedCoordinates;
+                }
+
+
+
                 //if (GUI.Button(new Rect(50f, 400f, 200f, 30f), "Cinematic Camera"))
                 //{
                 //    cheats.CinematicMode();
@@ -94,7 +115,7 @@ namespace SunkenLandMenu
                 foreach (Character character in allCharacters)
                 {
                     if (character == null) continue;
-                    Esp.DrawESP(character);
+                    Esp.DrawESP(character, lines);
                 }
             }
 
@@ -115,11 +136,9 @@ namespace SunkenLandMenu
 
             if (Input.GetKeyDown(KeyCode.Insert))
             {
-                 
                 menu = !menu;
-
             }
-
+            
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 Boat boat = Global.code.Player.drivingObject;
