@@ -16,13 +16,12 @@ namespace SunkenLandMenu
         }
 
 
-        public static void DrawESP(Character character, bool lines = false)
+        public static void DrawESP(Character character, bool lines, float maxDistance)
         {
-            Vector3 lastPosition = Vector3.zero;
 
             Vector3 pivotPos = character.transform.position;
             int distanceToMob = (int)Vector3.Distance(pivotPos, Global.code.Player.transform.position);
-            if (distanceToMob > 100 && lastPosition != pivotPos) {
+            if (distanceToMob > maxDistance) {
                 return;
             }
 
@@ -35,7 +34,7 @@ namespace SunkenLandMenu
             playerHeadPos.x = pivotPos.x;
             playerHeadPos.y = pivotPos.y + 1.8f;
             playerHeadPos.z = pivotPos.z;
-            
+
             //World to screen
             Vector3 w2s_footPos = Camera.main.WorldToScreenPoint(playerFootPos);
             Vector3 w2s_headPos = Camera.main.WorldToScreenPoint(playerHeadPos);
@@ -50,9 +49,8 @@ namespace SunkenLandMenu
                 Vector2 centerScreen = new Vector2((float)Screen.width / 2, (float)Screen.height / 2);
                 if (lines)
                 {
-                    Render.DrawLine(centerScreen, w2s_headPos,Color.red,1f) ;
+                    Render.DrawLine(centerScreen, new Vector2(w2s_footPos.x,w2s_footPos.y), Color.red,1f) ;
                 }
-                lastPosition = pivotPos;
 
             }
         }

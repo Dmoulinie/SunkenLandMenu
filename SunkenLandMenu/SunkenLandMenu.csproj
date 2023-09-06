@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="Esp.cs" />
     <Compile Include="Render.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Stats.cs" />
     <Compile Include="Hack.cs" />
     <Compile Include="Loader.cs" />
@@ -77,8 +78,9 @@
     <Compile Include="Teleport.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>D:\unityH\SunkenLand\Assembly-CSharp.dll</HintPath>
+    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\Sunkenland\Sunkenland_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
       <HintPath>D:\unityH\SunkenLand\Assembly-CSharp-firstpass.dll</HintPath>

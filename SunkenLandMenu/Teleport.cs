@@ -8,13 +8,12 @@ namespace SunkenLandMenu
         Vector3 savedPosition;
         public void SaveCoordinates()
         {
-            savedPosition = Global.code.Player.transform.position;
-            Debug.Log(savedPosition);
+            savedPosition = FPSPlayer.code.transform.position;
         }
 
         public void TeleportToSavedCoordinates()
         {
-            Global.code.Player.transform.position = savedPosition;
+            FPSPlayer.code.transform.position = savedPosition;
         }
     }
 }

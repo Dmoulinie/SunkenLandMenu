@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Photon.Realtime;
+using UnityEngine;
 
 namespace SunkenLandMenu
 {
@@ -15,6 +16,7 @@ namespace SunkenLandMenu
         {
             Global.code.Player.Health = 1000000f;
             Global.code.Player.MaxHealth = 1000000f;
+            
         }
 
         public static void InfiniteFoodAndWater()
@@ -44,5 +46,47 @@ namespace SunkenLandMenu
         {
             Global.code.Player.BodyTemperature = 100f;
         }
+
+        public static void MillionDamage()
+        {
+            if (Global.code.Player.weaponInHand == null)
+            {
+                return;
+            }
+            Global.code.Player.weaponInHand.damage = 1000000f;
+        }
+
+        public static void NoRecoil()
+        {
+
+            PlayerCharacter player = Global.code.Player;
+            if (Global.code.Player.weaponInHand == null)
+            {
+                return;
+            }
+            player.weaponInHand.verticalKick = 0f;
+            player.weaponInHand.viewClimbSide = 0f;
+            player.weaponInHand.viewClimbUp = 0f;
+            player.weaponInHand.horizontalKick = 0f;
+            player.weaponInHand.recoil = 0f;
+            player.weaponInHand.canFireUnderwater = true;
+            //player.weaponInHand.curMag = player.weaponInHand.magSize;
+        }
+    
+        public static void RecoilEnable()
+        {
+            PlayerCharacter player = Global.code.Player;
+            if (Global.code.Player.weaponInHand == null)
+            {
+                return;
+            }
+            player.weaponInHand.horizontalKick = 2f;
+            player.weaponInHand.verticalKick = 3f;
+            player.weaponInHand.viewClimbSide = 0.5f;
+            player.weaponInHand.viewClimbUp = 1f;
+            player.weaponInHand.recoil = 0.5f;
+            player.weaponInHand.canFireUnderwater = false;
+        }
     }
+
 }
